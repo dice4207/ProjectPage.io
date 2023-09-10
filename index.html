@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project page</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <a href="https://dice4207.github.io/">Portfolio</a>
+    <h3>PROJECT PAGE</h3>
+ <div class="container"><ul>
+  <li> <a href="https://dice4207.github.io/Pacman-Excerise.io/">Packman Excercise</a></li>
+</ul>
+<ul>
+  <li>  <a href="https://dice4207.github.io/Eye-excercise.io/"> Eye Excercise</a></li>
+</ul>
+<ul>
+  <li> <a href="https://dice4207.github.io/Real-Time-Bus-traker.io/">Real Time Bus Excercise</a> </li>
+   </ul>
+</div>
+
+<h1>Pacman Excercise</h1>    ,       
+
+<p> Puch the add pacman button to begin. The more you push it the more pacman appear then when your ready push start game button the more you push the buttonn the faster the pacman move.</p>
+
+<h4> Eye Excercise</h4>
+<p> The Eye excercise is designed to have a pair of eyes follow the cursor everywhere it moves to. You can't get away.</p>
+
+<h5>Real Time Bus Excercise </h5>
+<p> Real time bus excercise is a map of Boston. On the map is a buton called Live Tracking. When you push the button a little icon start moving, it follows the bus route from MIT University to Harvard University.</p>
+<canvas id="animationCanvas"></canvas>
+<Script src="project.js"></Script>
+<style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #14495e;
+    }
+
+    .eyes {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      text-align: center;
+    }
+    .eye {
+      width: 240px;
+      height: 120px;
+      background: #fff;
+      display: inline-block;
+      margin: 40px;
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+    }
+    .ball {
+      width: 80px;
+      height: 80px;
+      background: #b50606;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+  </style>
+
+  <body>
+    <div class="eyes">
+      <div class="eye">
+        <div class="ball"></div>
+      </div>
+      <div class="eye">
+        <div class="ball"></div>
+      </div>
+    </div>
+  </body>
+  <script>
+    var balls = document.getElementsByClassName("ball");
+    document.onmousemove = () => {
+      var x = (event.clientX * 100) / window.innerWidth + "%";
+      var y = (event.clientY * 100) / window.innerHeight + "%";
+
+      for (let i = 0; i < 2; i++) {
+        balls[i].style.left = x;
+        balls[i].style.top = y;
+        balls[i].transfoorm = "translate(-" + x + ",-" + y + ")";
+      }
+    };
+  </script>
+</body>
+
+</html>
